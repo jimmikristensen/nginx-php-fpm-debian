@@ -49,8 +49,8 @@ rm -Rf /etc/nginx/sites-enabled/default && \
 rm -Rf /etc/nginx/sites-available/default && \
 mkdir -p /etc/nginx/ssl/
 ADD ./default /etc/nginx/sites-available/default
-RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default && \
-ADD ./index.php /usr/share/nginx/html/index.php && \
+RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+ADD ./index.php /usr/share/nginx/html/index.php
 RUN chown -Rf www-data.www-data /usr/share/nginx/html/
 
 # Supervisor Config
